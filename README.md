@@ -72,6 +72,8 @@ cd 2025-game
 
 * Launch Godot.
 * Click on "Import" and select the `project.godot` file inside the cloned repo.
+* At the top of Godot go to Editor -> Editor Settings -> Text Editor -> Completion and turn on `Add Type Hints` (This will help with code completion utilizing static type hints).
+* Go to Editor -> Editor Settings -> Text Editor -> Appearance and ensure that `Draw Tabs` is turned on, `Draw Spaces` is turned off, and `Line Spacing` is set to 4. (This will help with code readability and will make it consistent with common code editors such as VSCode).
 
 
 ## Understanding Git
