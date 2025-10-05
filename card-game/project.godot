@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Snake Game"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/name="Card Game"
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [debug]
