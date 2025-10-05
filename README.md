@@ -1,10 +1,10 @@
-# 2025-game: Snake with Godot
+# 2025-game: Card Game with Godot
 
-Welcome to the Godot Snake Game project for 2025! This guide will help you get started with setting up the project, understanding the basics of Godot, and collaborating using Git. This is a beginner-friendly guide aimed at teaching key game development concepts through the recreation of the classic Snake game.
+Welcome to the Godot Card Game project for 2025! This guide will help you get started with setting up the project, understanding the basics of Godot, and collaborating using Git. This is a beginner-friendly guide aimed at teaching key game development concepts through the creation of a card game.
 
 This project will be challenging to complete in the short time we have, but it will be a great way to learn the basics of Godot and GDScript, along with some good code coding practices that I wish I had known when I was starting out.
 
-This guide will be long and will hopefully will cover most of the key concepts you need to know to get started with Godot and Git. If you have any questions, feel free to ask and I will try to update this guide as problems arise.
+I've tried to make this guide as helpful as possible to get you started with the key concepts you need to know to get started with Godot and Git. If you have any questions, feel free to ask and I will try to update this guide as problems arise.
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@ This guide will be long and will hopefully will cover most of the key concepts y
 - [Project Setup](#project-setup)
 - [Understanding Git](#understanding-git)
 - [Getting Started with Godot](#getting-started-with-godot)
-- [Snake Game Design](#snake-game-design)
+- [Game Design](#game-design)
 - [Useful Tutorials and Resources](#useful-tutorials-and-resources)
 
 
@@ -27,10 +27,11 @@ This guide will be long and will hopefully will cover most of the key concepts y
 
 ## Game concept
 
-You will be building out a snake game using Godot and GDScript.
-* The game will be a 2D game where the player controls a snake that moves around the screen.
-* The snake will grow longer every time it eats food.
-* The game will end when the snake runs into the screen edges or itself.
+You will be building out a card game using Godot and GDScript.
+* The game will be a 2D game where the player constructs a deck of cards and plays against an AI opponent.
+* The game structure will be similar to games like Gwent and Marvel Rivals, where cards will have a score and special effects to turn the tide of the game.
+* Requirements for the game will be found in the [Game Design](#game-design) section.
+
 
 ## Godot concepts
 
@@ -208,15 +209,15 @@ print(result) # prints 3
 
 
 ### Classes
-Example: `snake.gd`:
+Example: `character.gd`:
 ```python
 extends Node2D
-class_name Snake
+class_name Character
 
-## The Snake object description.
+## The Character object description.
 
-## The length of the snake.
-var length: int = 1
+## The movement speed of the character.
+var movement_speed: int = 1
 
 ## Called when the node is added to the scene.
 func _ready() -> void:
@@ -234,7 +235,7 @@ func _handle_movement() -> void:
 ### Syntax
 
 * `extends`: Specifies the base class for the class (In this case `Node2D`).
-* `class_name`: Specifies the name of the class (In this case `Snake`).
+* `class_name`: Specifies the name of the class (In this case `Character`).
 * `func`: Declares a function.
 * `-> void`: Specifies the return type of a function to be `void` (Equivalent to `None` in python).
 * `pass`: A placeholder for code that will be added later.
@@ -250,30 +251,36 @@ func _handle_movement() -> void:
 * [Class Tutorial Video](https://www.youtube.com/watch?v=uV6XIlLmMco)
 
 
-## Snake Game Design
+## Game Design
 
-I will leave it up to you on how you want to design the snake game, but I will leave some suggestions here.
+I will give you some game design requirements and suggestions to help you get started with the game.
 
 ### Game Requirements:
 
-* The snake should be a series of squares that move in a grid.
-* The snake should be able to grow when it eats food.
-* The snake should be able to move in 4 directions (up, down, left, right).
-* The snake should be able to wrap around the screen.
-* The snake should be able to detect collisions with itself.
-* The snake should be able to detect collisions with the food.
-* The food should be a random location on the screen.
-* The food should be able to be eaten by the snake.
-* The game should have a score.
-* The game should have a game over screen.
-* The game should have a main menu.
+* Each player will draw a hand of cards and play them on the board. (Gwent and Marvel Rivals have 3 board areas to play cards, I recommend just creating one board area to minimize project scope)
+* Only one card can be played per turn.
+* Most cards will have a score value associated with them and possibly some special effects, such as drawing additional cards or buffing cards of a particular type (example: an alpha wolf gives 1 strength to all other wolves).
+* The player with the highest score totalled from all cards on their board at the end of a round wins the round.
+* The player with the most rounds won wins the game (I recommend 3 rounds where winning 2 out of 3 rounds wins the game).
+* Each player may decide when they are done playing cards for the round.
+* Once both players have decided to stop playing cards for the round, the round will end.
+* Each player will be limited to their initially drawn hand of cards unless an effect allows them to draw additional cards.
+* Each player will draw one card at the beginning of a new round.
 
 ### Suggestions:
 
-* Create a grid slot object (What node should it inherit from? Node2D, Sprite2D, ColorRect? Explore a little).
-* Create an item object that could be anything you place in a grid slot.
-* Create a snake object that will inherit from the item object.
-* Create a food object that will inherit from the item object.
+* Build out a card class that will be used as a base for all card classes.
+* Create a card configuration class as a `Resource` that will be used to create cards.
+    * What kind of data would you need in this configuration class?
+        * Name?
+        * Effect?
+        * Score?
+        * Type(s)?
+        * Image?
+* Create a card factory class that will be used to create cards from the card configuration.
+* Create a card manager class that will be used to manage the cards in the your deck and hand.
+* Create a card slot class that will be used to display the cards in the your deck, hand, and board.
+* Start with one basic card and get the core functionality of the game working first with decks of that one card.
 
 ## Useful Tutorials and Resources
 
@@ -283,6 +290,8 @@ I will leave it up to you on how you want to design the snake game, but I will l
 - [What is Godot Video](https://www.youtube.com/watch?v=QKgTZWbwD1U&list=PLu2_nk4Fitecf66b5E-WdarNafvAMBWjk)
 - [Getting Started with Godot Video](https://www.youtube.com/watch?v=6YNKi3hcS5U&list=PLu2_nk4Fitecf66b5E-WdarNafvAMBWjk)
 - [Godot GDScript Playground](https://gd.tumeo.space/) (Try out the examples and experiment!)
+- [Resources Explanation Video](https://www.youtube.com/watch?v=h5vpjCDNa-w)
+- [Godot Card Game Tutorial Playlist](https://www.youtube.com/watch?v=2jMcuKdRh2w&list=PLNWIwxsLZ-LMYzxHlVb7v5Xo5KaUV7Tq1)
 
 ### 2. Git
 
