@@ -29,7 +29,7 @@ I've tried to make this guide as helpful as possible to get you started with the
 
 You will be building out a card game using Godot and GDScript.
 * The game will be a 2D game where the player constructs a deck of cards and plays against an AI opponent.
-* The game structure will be similar to games like Gwent and Marvel Rivals, where cards will have a score and special effects to turn the tide of the game.
+* The game structure will be similar to games like Gwent and Marvel Snap, where cards will have a score and special effects to turn the tide of the game.
 * Requirements for the game will be found in the [Game Design](#game-design) section.
 
 
@@ -53,7 +53,7 @@ You will be building out a card game using Godot and GDScript.
 
 ### 1. Install Godot
 
-* Download the Godot 4.4.1 version from [godotengine.org](https://godotengine.org).
+* Download the Godot 4.5 version from [godotengine.org](https://godotengine.org).
 
 * Extract and run the executable (no installation required).
 
@@ -72,7 +72,7 @@ cd 2025-game
 ### 4. Open the Project in Godot
 
 * Launch Godot.
-* Click on "Import" and select the `project.godot` file inside the cloned repo.
+* Click on "Import" and select the `project.godot` file inside the cloned repo or just the `card-game` folder.
 * At the top of Godot go to Editor -> Editor Settings -> Text Editor -> Completion and turn on `Add Type Hints` (This will help with code completion utilizing static type hints).
 * Go to Editor -> Editor Settings -> Text Editor -> Appearance and ensure that `Draw Tabs` is turned on, `Draw Spaces` is turned off, and `Line Spacing` is set to 4. (This will help with code readability and will make it consistent with common code editors such as VSCode).
 
@@ -257,7 +257,7 @@ I will give you some game design requirements and suggestions to help you get st
 
 ### Game Requirements:
 
-* Each player will draw a hand of cards and play them on the board. (Gwent and Marvel Rivals have 3 board areas to play cards, I recommend just creating one board area to minimize project scope)
+* Each player will draw a hand of cards and play them on the board. (Gwent and Marvel Snap have 3 board areas to play cards, I recommend just creating one board area to minimize project scope)
 * Only one card can be played per turn.
 * Most cards will have a score value associated with them and possibly some special effects, such as drawing additional cards or buffing cards of a particular type (example: an alpha wolf gives 1 strength to all other wolves).
 * The player with the highest score totalled from all cards on their board at the end of a round wins the round.
