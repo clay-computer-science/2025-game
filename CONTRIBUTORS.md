@@ -6,3 +6,4 @@
 ## Students:
 * Joshua Campbell
 * Christopher Swan
+* Clark Isabella
