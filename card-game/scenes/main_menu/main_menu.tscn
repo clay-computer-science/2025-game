@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://che65y2k6fh8a"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Title" type="Label" parent="."]
+offset_right = 1280.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 200
+text = "Game Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_top = 300.0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="MainButtons" type="VBoxContainer" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="play" type="Button" parent="CenterContainer/MainButtons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="settings" type="Button" parent="CenterContainer/MainButtons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="credits" type="Button" parent="CenterContainer/MainButtons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+
+[node name="quit" type="Button" parent="CenterContainer/MainButtons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="SettingsMenu" type="VBoxContainer" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="CreditsMenu" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
