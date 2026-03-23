@@ -15,7 +15,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Card Game"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+run/main_scene="uid://che65y2k6fh8a"
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [debug]
@@ -28,6 +29,10 @@ gdscript/warnings/inferred_declaration=1
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="Card Game"
 
 [rendering]
 
