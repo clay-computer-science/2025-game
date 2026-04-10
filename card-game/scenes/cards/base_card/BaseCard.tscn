@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://d20qjmg1i0g5f"]
+
+[ext_resource type="Texture2D" uid="uid://bge003rxbo7b5" path="res://assets/card_sprites/card_fronts/background_colors/card_background_colors.png" id="1_q17io"]
+[ext_resource type="Texture2D" uid="uid://csn6f1lrnwpw3" path="res://assets/card_sprites/card_fronts/card_picture_frames.png" id="2_bfp84"]
+[ext_resource type="Texture2D" uid="uid://by2ro4uwy22rn" path="res://assets/card_sprites/card_fronts/card_title_containers.png" id="3_ihtwd"]
+[ext_resource type="FontFile" uid="uid://y3gl6yxd2rmg" path="res://resources/font/Block.ttf" id="4_qrsdx"]
+[ext_resource type="Texture2D" uid="uid://bmed7pa41lyaa" path="res://assets/card_sprites/card_fronts/card_description_containers.png" id="5_ayksh"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ffpaa"]
+
+[node name="base_card" type="Node2D" unique_id=334941286]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1103092639]
+offset_top = 14.0
+offset_right = 100.0
+offset_bottom = 114.0
+
+[node name="CardBackgroundColors" type="Sprite2D" parent="PanelContainer" unique_id=1240943630]
+position = Vector2(50, 50)
+texture = ExtResource("1_q17io")
+region_enabled = true
+region_rect = Rect2(400, 0, 100, 128)
+
+[node name="CardPictureFrames" type="Sprite2D" parent="PanelContainer" unique_id=245763082]
+z_index = 1
+position = Vector2(50, 46)
+texture = ExtResource("2_bfp84")
+region_enabled = true
+region_rect = Rect2(172, 0, 86, 72)
+
+[node name="Art" type="TextureRect" parent="PanelContainer/CardPictureFrames" unique_id=879543067]
+z_index = -1
+offset_left = -39.0
+offset_top = -32.0
+offset_right = 117.0
+offset_bottom = 96.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("PlaceholderTexture2D_ffpaa")
+
+[node name="CardTitleContainers" type="Sprite2D" parent="." unique_id=1851251556]
+position = Vector2(50, 14)
+texture = ExtResource("3_ihtwd")
+region_enabled = true
+region_rect = Rect2(192, 0, 96, 18)
+
+[node name="TitleBox" type="RichTextLabel" parent="CardTitleContainers" unique_id=1224262961]
+offset_left = -46.0
+offset_top = -7.0
+offset_right = 46.0
+offset_bottom = 8.0
+
+[node name="Title" type="Label" parent="CardTitleContainers/TitleBox" unique_id=1885632000]
+layout_mode = 0
+offset_right = 92.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_qrsdx")
+theme_override_font_sizes/font_size = 15
+text = "Card"
+horizontal_alignment = 1
+autowrap_trim_flags = 0
+justification_flags = 0
+
+[node name="CardDescriptionContainers" type="Sprite2D" parent="." unique_id=1040052970]
+position = Vector2(50, 111)
+texture = ExtResource("5_ayksh")
+region_enabled = true
+region_rect = Rect2(192, 0, 96, 29)
+
+[node name="DescriptionBox" type="RichTextLabel" parent="CardDescriptionContainers" unique_id=1585436947]
+offset_left = -46.0
+offset_top = -12.0
+offset_right = 46.0
+offset_bottom = 12.0
+
+[node name="Description" type="Label" parent="CardDescriptionContainers/DescriptionBox" unique_id=1344376558]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 91.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_qrsdx")
+theme_override_font_sizes/font_size = 5
+text = "Card"
+autowrap_trim_flags = 0
+justification_flags = 0
