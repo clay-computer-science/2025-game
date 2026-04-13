@@ -8,7 +8,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ffpaa"]
 
-[node name="base_card" type="Node2D" unique_id=334941286]
+[node name="BaseCard" type="Node2D" unique_id=334941286]
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1103092639]
 offset_top = 14.0
