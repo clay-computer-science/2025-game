@@ -10,25 +10,20 @@
 
 [node name="BaseCard" type="Node2D" unique_id=334941286]
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1103092639]
-offset_top = 14.0
-offset_right = 100.0
-offset_bottom = 114.0
-
-[node name="CardBackgroundColors" type="Sprite2D" parent="PanelContainer" unique_id=1240943630]
-position = Vector2(50, 50)
+[node name="CardBackgroundColors" type="Sprite2D" parent="." unique_id=1240943630]
+position = Vector2(50, 64)
 texture = ExtResource("1_m2utr")
 region_enabled = true
 region_rect = Rect2(400, 0, 100, 128)
 
-[node name="CardPictureFrames" type="Sprite2D" parent="PanelContainer" unique_id=245763082]
+[node name="CardPictureFrames" type="Sprite2D" parent="." unique_id=245763082]
 z_index = 1
-position = Vector2(50, 46)
+position = Vector2(50, 60)
 texture = ExtResource("2_xwqvq")
 region_enabled = true
 region_rect = Rect2(172, 0, 86, 72)
 
-[node name="Art" type="TextureRect" parent="PanelContainer/CardPictureFrames" unique_id=879543067]
+[node name="Art" type="TextureRect" parent="CardPictureFrames" unique_id=879543067]
 z_index = -1
 offset_left = -39.0
 offset_top = -32.0
@@ -36,6 +31,7 @@ offset_right = 117.0
 offset_bottom = 96.0
 scale = Vector2(0.5, 0.5)
 texture = SubResource("PlaceholderTexture2D_ffpaa")
+metadata/_edit_use_anchors_ = true
 
 [node name="CardTitleContainers" type="Sprite2D" parent="." unique_id=1851251556]
 position = Vector2(50, 14)
@@ -48,6 +44,7 @@ offset_left = -46.0
 offset_top = -7.0
 offset_right = 46.0
 offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="CardTitleContainers/TitleBox" unique_id=1885632000]
 layout_mode = 0
@@ -62,6 +59,7 @@ text = "Card"
 horizontal_alignment = 1
 autowrap_trim_flags = 0
 justification_flags = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="CardDescriptionContainers" type="Sprite2D" parent="." unique_id=1040052970]
 position = Vector2(50, 111)
@@ -74,6 +72,7 @@ offset_left = -46.0
 offset_top = -12.0
 offset_right = 46.0
 offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Description" type="Label" parent="CardDescriptionContainers/DescriptionBox" unique_id=1344376558]
 layout_mode = 0
@@ -89,3 +88,4 @@ theme_override_font_sizes/font_size = 5
 text = "Card"
 autowrap_trim_flags = 0
 justification_flags = 0
+metadata/_edit_use_anchors_ = true
