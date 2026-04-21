@@ -152,7 +152,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "Logan Clucky"
+text = "Logan Cluckey"
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/CreditsMenu/HBoxContainer" unique_id=501887306]
