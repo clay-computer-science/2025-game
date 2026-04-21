@@ -140,7 +140,7 @@ layout_mode = 2
 theme = SubResource("Theme_3ovsr")
 theme_override_constants/separation = 12
 
-[node name="Author" type="Label" parent="CenterContainer/CreditsMenu/HBoxContainer/VBoxContainer" unique_id=985817841]
+[node name="Advisor" type="Label" parent="CenterContainer/CreditsMenu/HBoxContainer/VBoxContainer" unique_id=985817841]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
