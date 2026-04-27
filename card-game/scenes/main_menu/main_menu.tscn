@@ -1,50 +1,206 @@
 [gd_scene format=3 uid="uid://che65y2k6fh8a"]
 
-[node name="MainMenu" type="Node2D" unique_id=2016432807]
+[ext_resource type="Script" uid="uid://0hhknj3eebdh" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
 
-[node name="Title" type="Label" parent="." unique_id=2116963491]
+[sub_resource type="Theme" id="Theme_wem23"]
+
+[sub_resource type="Theme" id="Theme_3ovsr"]
+
+[sub_resource type="Theme" id="Theme_4xg86"]
+
+[node name="MainMenu" type="Node2D" unique_id=1419685868]
+script = ExtResource("1_fsom3")
+
+[node name="Title" type="Label" parent="." unique_id=606203494]
 offset_right = 1280.0
-offset_bottom = 300.0
+offset_bottom = 275.0
 theme_override_font_sizes/font_size = 200
 text = "Game Title"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1126887720]
-offset_top = 300.0
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1676783422]
+offset_top = 264.0
 offset_right = 1280.0
-offset_bottom = 720.0
+offset_bottom = 726.0
 
-[node name="MainButtons" type="VBoxContainer" parent="CenterContainer" unique_id=640364043]
-visible = false
+[node name="MainButtons" type="VBoxContainer" parent="CenterContainer" unique_id=38685839]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="play" type="Button" parent="CenterContainer/MainButtons" unique_id=669249868]
+[node name="Play" type="Button" parent="CenterContainer/MainButtons" unique_id=2132215993]
+custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 55
 text = "Play"
 
-[node name="settings" type="Button" parent="CenterContainer/MainButtons" unique_id=1020879869]
+[node name="Settings" type="Button" parent="CenterContainer/MainButtons" unique_id=1902821393]
+custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 55
 text = "Settings"
 
-[node name="credits" type="Button" parent="CenterContainer/MainButtons" unique_id=1004119242]
+[node name="Credits" type="Button" parent="CenterContainer/MainButtons" unique_id=741571008]
+custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 55
 text = "Credits"
 
-[node name="quit" type="Button" parent="CenterContainer/MainButtons" unique_id=2019089038]
+[node name="Quit" type="Button" parent="CenterContainer/MainButtons" unique_id=948350938]
+custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 55
 text = "Quit"
 
-[node name="SettingsMenu" type="VBoxContainer" parent="CenterContainer" unique_id=535632973]
+[node name="SettingsMenu" type="VBoxContainer" parent="CenterContainer" unique_id=1811884018]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="CreditsMenu" type="VBoxContainer" parent="CenterContainer" unique_id=1803941175]
+[node name="Fullscreen" type="CheckBox" parent="CenterContainer/SettingsMenu" unique_id=398179348]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_font_sizes/font_size = 50
+text = "Fullscreen"
+
+[node name="MainVolSlider" type="HSlider" parent="CenterContainer/SettingsMenu" unique_id=1940183426]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="CenterContainer/SettingsMenu/MainVolSlider" unique_id=1023002994]
+custom_minimum_size = Vector2(300, 55)
+layout_mode = 0
+offset_top = -16.0
+offset_right = 300.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 34
+text = "Main Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicVolSlider" type="HSlider" parent="CenterContainer/SettingsMenu" unique_id=752352428]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="CenterContainer/SettingsMenu/MusicVolSlider" unique_id=1008207179]
+custom_minimum_size = Vector2(300, 55)
+layout_mode = 0
+offset_top = -16.0
+offset_right = 300.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 34
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SfxVolSlider" type="HSlider" parent="CenterContainer/SettingsMenu" unique_id=1574165626]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="CenterContainer/SettingsMenu/SfxVolSlider" unique_id=2010410065]
+custom_minimum_size = Vector2(300, 55)
+layout_mode = 0
+offset_top = -16.0
+offset_right = 300.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 34
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="CenterContainer/SettingsMenu" unique_id=273388201]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 55
+text = "Back"
+
+[node name="CreditsMenu" type="VBoxContainer" parent="CenterContainer" unique_id=953956314]
+visible = false
+custom_minimum_size = Vector2(1000, 450)
+layout_mode = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/CreditsMenu" unique_id=325197687]
+custom_minimum_size = Vector2(0, 250)
+layout_direction = 2
+layout_mode = 2
+theme = SubResource("Theme_wem23")
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/CreditsMenu/HBoxContainer" unique_id=1179115945]
+layout_mode = 2
+theme = SubResource("Theme_3ovsr")
+theme_override_constants/separation = 12
+
+[node name="Advisor" type="Label" parent="CenterContainer/CreditsMenu/HBoxContainer/VBoxContainer" unique_id=985817841]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+text = "--- Advisor ---"
+horizontal_alignment = 1
+
+[node name="AdvisorText" type="Label" parent="CenterContainer/CreditsMenu/HBoxContainer/VBoxContainer" unique_id=1114056379]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Logan Cluckey"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/CreditsMenu/HBoxContainer" unique_id=501887306]
+layout_mode = 2
+theme = SubResource("Theme_4xg86")
+theme_override_constants/separation = 10
+
+[node name="Students" type="Label" parent="CenterContainer/CreditsMenu/HBoxContainer/VBoxContainer2" unique_id=1799763926]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+text = "--- Students ---"
+horizontal_alignment = 1
+
+[node name="StudentsText" type="Label" parent="CenterContainer/CreditsMenu/HBoxContainer/VBoxContainer2" unique_id=1051101986]
+custom_minimum_size = Vector2(120, 175)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Joshua Campbell
+Christopher Swan
+Clark Isabella
+Gryphon Minton"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="CenterContainer/CreditsMenu" unique_id=2132025451]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 55
+text = "Back"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1361784565]
+z_index = -4096
+offset_right = 1316.0
+offset_bottom = 758.0
+mouse_filter = 2
+color = Color(0.42009485, 0.4103741, 0.790919, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=749873935]
+
+[connection signal="pressed" from="CenterContainer/MainButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="CenterContainer/SettingsMenu/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/MainVolSlider" to="." method="_on_main_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/SfxVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
+[connection signal="pressed" from="CenterContainer/SettingsMenu/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CenterContainer/CreditsMenu/Back" to="." method="_on_back_pressed"]
